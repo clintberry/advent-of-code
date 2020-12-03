@@ -18,8 +18,8 @@ lineReader.on('close', function(){
     var trees=0;
     x=0;
     for(var y=0; y<data.length; y++){
-        if (x>(data[y].length)) {
-            x -= data[y].length;
+        if (x>(data[y].length-1)) {
+            x -= data[y].length-1;
         }
         //console.log(x)
         if (data[y].charAt(x) == "#") {
