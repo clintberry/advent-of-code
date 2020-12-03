@@ -13,13 +13,16 @@ lineReader.on('line', function (line) {
     data.push(line)
 });
 
+dy =2;
+dx =1;
+
 lineReader.on('close', function(){
     console.log("starting")
     var trees=0;
     x=0;
-    for(var y=0; y<data.length; y++){
+    for(var y=0; y<data.length; y+=dy){
         if (x>(data[y].length-1)) {
-            x -= data[y].length-1;
+            x -= data[y].length;
         }
         //console.log(x)
         var line = "";
@@ -29,9 +32,9 @@ lineReader.on('close', function(){
         } else {
             line = setCharAt(data[y],x,"O")
         }
-        console.log(line)
+        //console.log(line)
         
-        x+=3
+        x+=dx
     }
     console.log(trees)
 });
