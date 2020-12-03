@@ -22,13 +22,14 @@ lineReader.on('close', function(){
             x -= data[y].length-1;
         }
         //console.log(x)
+        var line = "";
         if (data[y].charAt(x) == "#") {
             trees++;
-            data[y] = setCharAt(data[y],x,"X")
+            line = setCharAt(data[y],x,"X")
         } else {
-            data[y] = setCharAt(data[y],x,"O")
+            line = setCharAt(data[y],x,"O")
         }
-        console.log(data[y])
+        console.log(line)
         
         x+=3
     }
